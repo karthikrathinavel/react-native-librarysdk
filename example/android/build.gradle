@@ -20,3 +20,13 @@ buildscript {
         classpath("com.facebook.react:react-native-gradle-plugin")
     }
 }
+allprojects {
+  repositories {
+    mavenCentral()
+    jcenter()
+    maven {
+      url "https://jitpack.io"
+      credentials {username authToken}
+    }
+  }
+}

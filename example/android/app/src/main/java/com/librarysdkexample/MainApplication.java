@@ -9,7 +9,9 @@ import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
 import java.util.List;
-
+import io.mob.resu.reandroidsdk.ReAndroidSDK;
+import io.mob.resu.reandroidsdk.ReReactNativeSDKPackage;
+import io.mob.resu.reandroidsdk.AppConstants;
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost =
@@ -53,6 +55,8 @@ public class MainApplication extends Application implements ReactApplication {
   @Override
   public void onCreate() {
     super.onCreate();
+    ReAndroidSDK.getInstance(this);
+    AppConstants.LogFlag =true;
     SoLoader.init(this, /* native exopackage */ false);
     if (BuildConfig.IS_NEW_ARCHITECTURE_ENABLED) {
       // If you opted-in for the New Architecture, we load the native entry point for this app.
